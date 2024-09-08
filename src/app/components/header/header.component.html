@@ -1,0 +1,8 @@
+<div class="header">
+  <p class="header__logo">Currency Converter</p>
+  <div *ngIf="rates$ | async as rates" class="header__rates">
+    <p *ngFor="let rate of rates" class="rate">
+      1 {{ baseCurrency }} - {{ rate[1] }} {{ rate[0] }}
+    </p>
+  </div>
+</div>

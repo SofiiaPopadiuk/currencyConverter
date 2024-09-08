@@ -1,0 +1,66 @@
+.currency-converter {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 15px auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  align-items: center;
+
+  &__group {
+    width: 100%;
+    box-sizing: border-box;
+
+    @media (min-width: 769px) {
+      width: auto;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+
+    @media (min-width: 769px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+
+  &__label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+  }
+
+  &__amount,
+  &__currency {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+    background-color: #fff;
+    box-sizing: border-box;
+
+    &:focus {
+      border-color: #ccc;
+      outline: none;
+    }
+
+    @media (min-width: 769px) {
+      width: auto;
+    }
+  }
+}
