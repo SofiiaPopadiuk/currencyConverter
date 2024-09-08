@@ -59,12 +59,14 @@ export class ConverterComponent implements OnInit {
       });
   }
 
-  setupFormControlStream(controlName: string, initialValue: any) {
-    return this.currencyForm.get(controlName).valueChanges.pipe(
-      debounceTime(100),
-      distinctUntilChanged(),
-      startWith(this.currencyForm.get(controlName).value || initialValue),
-    );
+  setupFormControlStream(controlName: string, initialValue: number | string) {
+    return this.currencyForm
+      .get(controlName)
+      .valueChanges.pipe(
+        debounceTime(100),
+        distinctUntilChanged(),
+        startWith(this.currencyForm.get(controlName).value || initialValue),
+      );
   }
 
   convert(
@@ -82,7 +84,6 @@ export class ConverterComponent implements OnInit {
           .get('amountFrom')
           ?.setValue(calculatedAmountFrom, { emitEvent: false });
       } else {
-        console.log(amountFrom)
         const calculatedAmountTo = amountFrom * rate;
         this.currencyForm
           .get('amountTo')
